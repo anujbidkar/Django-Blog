@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+
+{% for x in object_list  %}
+<br>
+<div class="row">
+
+
+<div class="col-lg-4">
+    <img width="200px" height="200px" src='{{x.image}}' alt="">
+    
+</div>
+
+<div class="col-lg-8">
+    <h1>
+        Title : {{x.title}}
+    </h1>
+    <p>
+        Description : {{x.text}}
+    </p>
+</div>
+</div>
+<br>
+{% endfor %}
+
+  
+{% endblock content %}
