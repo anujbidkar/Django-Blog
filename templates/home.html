@@ -4,16 +4,12 @@
 
 {% block content %}
 
-{% for x in object_list  %}
-<br>
-<div class="row">
-
-
-<div class="col-lg-4">
-    <img width="200px" height="200px" src='{{x.image}}' alt="">
+<a href="{% url 'new' %}">crete new blog</a>
+<div class="row"></div>
+<ol>
     
-</div>
-
+{% for x in object_list  %}
+<li>
 <div class="col-lg-8">
     <h1>
         Title : {{x.title}}
@@ -21,10 +17,17 @@
     <p>
         Description : {{x.text}}
     </p>
+
+    <p>
+        Detail :
+        <a href="{% url 'detailView' x.pk   %}">View Details</a>
+    </p>
 </div>
-</div>
-<br>
+
+
+</li>
 {% endfor %}
 
-  
+</ol>
+</div>
 {% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+
+<h1>
+    Details Blog 
+</h1>
+
+    <h2>
+        Title : {{batman.title}}
+    </h2>
+    <h3>
+        Description : {{batman.text}}
+    </h3>
+    <h3>
+        Edit Post : <a href="{% url 'blog_edit' batman.pk %}">Edit Post</a>
+    </h3>
+    <h3>
+        Delete Post : <a href="{% url 'blog_delete' batman.pk %}">Delete Post</a>
+    </h3>
+  
+{% endblock content %}
